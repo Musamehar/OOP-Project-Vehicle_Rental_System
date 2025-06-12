@@ -1,0 +1,20 @@
+<RCC>
+    <qresource prefix="/">
+        <file>assets/car1.jpg</file>
+        <file>assets/car2.jpg</file>
+        <file>assets/car3.jpg</file>
+        <file>assets/car4.jpg</file>
+        <file>assets/car5.jpg</file>
+        <file>assets/car6.jpg</file>
+        <file>assets/carcard1.jpg</file>
+        <file>assets/carcard2.jpg</file>
+        <file>assets/carcard3.jpg</file>
+        <file>assets/carcard8.jpg</file>
+        <file>assets/carcard9.jpg</file>
+        <file>assets/carcard10.jpg</file>
+        <file>assets/carcard4.jpg</file>
+        <file>assets/carcard5.jpg</file>
+        <file>assets/carcard6.jpg</file>
+        <file>assets/bg1.jpg</file>
+    </qresource>
+</RCC>

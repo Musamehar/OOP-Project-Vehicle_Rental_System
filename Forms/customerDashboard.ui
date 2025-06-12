@@ -1,0 +1,383 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>CustomerDashboard</class>
+ <widget class="QWidget" name="CustomerDashboard">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1000</width>
+    <height>700</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Royal Car Rentals Dashboard</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <!-- Navigation Bar -->
+   <item>
+    <layout class="QHBoxLayout" name="navLayout">
+     <item>
+      <widget class="QPushButton" name="btnBooking">
+       <property name="text">
+        <string>Booking</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="btnAbout">
+       <property name="text">
+        <string>About Us</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="btnTerms">
+       <property name="text">
+        <string>Terms &amp; Conditions</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="btnSettings">
+       <property name="text">
+        <string>⚙ Settings</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="btnHistory">
+       <property name="text">
+        <string>History</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="btnReviews">
+       <property name="text">
+        <string>Reviews</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+    </layout>
+   </item>
+   <!-- Stacked Widget for Pages -->
+   <item>
+    <widget class="QStackedWidget" name="stackedWidget">
+     <!-- Page: Booking -->
+     <widget class="QWidget" name="pageBooking">
+      <attribute name="title">
+       <string>Booking</string>
+      </attribute>
+      <layout class="QVBoxLayout" name="verticalLayoutBooking">
+       <item>
+        <widget class="QLabel" name="lblBanner">
+         <property name="text">
+          <string>Book your car in easy steps</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">font-size: 28px; font-weight: bold; color: #1e88e5;</string>
+         </property>
+        </widget>
+       </item>
+       <!-- Filter form -->
+       <item>
+        <layout class="QFormLayout" name="formLayoutBooking">
+         <item row="0" column="0">
+          <widget class="QLabel" name="lblPickup">
+           <property name="text">
+            <string>Pick-up:</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1">
+          <widget class="QDateEdit" name="dateEditPickup"/>
+         </item>
+         <item row="1" column="0">
+          <widget class="QLabel" name="lblDropoff">
+           <property name="text">
+            <string>Drop-off:</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="1">
+          <widget class="QDateEdit" name="dateEditDropoff"/>
+         </item>
+         <item row="2" column="0">
+          <widget class="QLabel" name="lblLocation">
+           <property name="text">
+            <string>Location:</string>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="1">
+          <widget class="QLineEdit" name="lineEditLocation"/>
+         </item>
+         <item row="3" column="0">
+          <widget class="QLabel" name="lblBrand">
+           <property name="text">
+            <string>Brand:</string>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="1">
+          <widget class="QComboBox" name="comboBoxBrand">
+           <item>
+            <property name="text">
+             <string>All Brands</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Porsche</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Toyota</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Mini</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Taycan</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item row="4" column="0">
+          <widget class="QCheckBox" name="checkBoxInsurance">
+           <property name="text">
+            <string>Add Insurance</string>
+           </property>
+          </widget>
+         </item>
+         <item row="4" column="1">
+          <widget class="QCheckBox" name="checkBoxGPS">
+           <property name="text">
+            <string>Add GPS</string>
+           </property>
+          </widget>
+         </item>
+         <item row="5" column="0" colspan="2">
+          <widget class="QPushButton" name="btnSearch">
+           <property name="text">
+            <string>Search Cars</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <!-- Car cards area -->
+       <item>
+        <widget class="QScrollArea" name="scrollAreaCars">
+         <property name="widgetResizable">
+          <bool>true</bool>
+         </property>
+         <widget class="QWidget" name="widgetCars">
+          <layout class="QGridLayout" name="gridLayoutCars"/>
+         </widget>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <!-- Page: About -->
+     <widget class="QWidget" name="pageAbout">
+      <layout class="QVBoxLayout" name="verticalLayoutAbout">
+       <item>
+        <widget class="QLabel" name="lblAbout">
+         <property name="text">
+          <string>Royal Car Rentals is your go-to destination for premium car rentals.
+
+We offer a diverse selection of high-end vehicles with unparalleled service to make your journey extraordinary. Experience excellence at every mile.</string>
+         </property>
+         <property name="wordWrap">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <!-- Page: Terms -->
+     <widget class="QWidget" name="pageTerms">
+      <layout class="QVBoxLayout" name="verticalLayoutTerms">
+       <item>
+        <widget class="QLabel" name="lblTerms">
+         <property name="text">
+          <string>Terms &amp; Conditions:
+
+1. Rental Agreement: By renting a vehicle from Royal Car Rentals, you agree to our policies.
+2. Payment Terms: Full payment is required before rental.
+3. Insurance &amp; Liability: You must select an insurance option.
+4. Modifications &amp; Cancellations: Requests must be 24 hours in advance.
+5. Data Security: All personal details are processed securely.
+6. Governing Law: Local laws apply.
+</string>
+         </property>
+         <property name="wordWrap">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <!-- Page: Settings -->
+     <widget class="QWidget" name="pageSettings">
+      <layout class="QFormLayout" name="formLayoutSettings">
+       <item row="0" column="0">
+        <widget class="QLabel" name="lblName">
+         <property name="text">
+          <string>Name:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <widget class="QLineEdit" name="lineEditName"/>
+       </item>
+       <item row="1" column="0">
+        <widget class="QLabel" name="lblPassword">
+         <property name="text">
+          <string>Password:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="1">
+        <widget class="QLineEdit" name="lineEditPassword"/>
+       </item>
+       <item row="2" column="0">
+        <widget class="QLabel" name="lblContact">
+         <property name="text">
+          <string>Contact:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="1">
+        <widget class="QLineEdit" name="lineEditContact"/>
+       </item>
+       <item row="3" column="0">
+        <widget class="QLabel" name="lblLoyalty">
+         <property name="text">
+          <string>Loyalty Points:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="1">
+        <widget class="QLineEdit" name="lineEditLoyalty"/>
+       </item>
+       <item row="4" column="0">
+        <widget class="QLabel" name="lblLanguage">
+         <property name="text">
+          <string>Language:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="1">
+        <widget class="QComboBox" name="comboBoxLanguage">
+         <item>
+          <property name="text">
+           <string>English</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Spanish</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>French</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item row="5" column="0" colspan="2">
+        <widget class="QPushButton" name="btnSave">
+         <property name="text">
+          <string>Save</string>
+         </property>
+        </widget>
+       </item>
+       <item row="6" column="0" colspan="2">
+        <widget class="QPushButton" name="btnLogout">
+         <property name="text">
+          <string>Logout</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <!-- Page: History -->
+     <widget class="QWidget" name="pageHistory">
+      <layout class="QVBoxLayout" name="verticalLayoutHistory">
+       <item>
+        <widget class="QTableView" name="tableViewHistory"/>
+       </item>
+      </layout>
+     </widget>
+     <!-- Page: Reviews -->
+     <widget class="QWidget" name="pageReviews">
+      <layout class="QVBoxLayout" name="verticalLayoutReviews">
+       <item>
+        <widget class="QLabel" name="lblReviewInstructions">
+         <property name="text">
+          <string>Submit your review for a car:</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLineEdit" name="lineEditReviewCar">
+         <property name="placeholderText">
+          <string>Car Name</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLineEdit" name="lineEditReviewRating">
+         <property name="placeholderText">
+          <string>Rating (1-5)</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLineEdit" name="lineEditReviewText">
+         <property name="placeholderText">
+          <string>Your Review</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="btnSubmitReview">
+         <property name="text">
+          <string>Submit Review</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

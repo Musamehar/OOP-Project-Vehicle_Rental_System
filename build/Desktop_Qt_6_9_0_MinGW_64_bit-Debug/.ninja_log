@@ -1,0 +1,76 @@
+# ninja log v6
+435	2924	7700010088658089	build.ninja	700388e1e368fc14
+6015	37234	7700088758076092	CMakeFiles/RoyalCarRental.dir/src/LoginWindow.cpp.obj	66da7998d0b16e5f
+121	807	7700816956021892	RoyalCarRental_autogen/timestamp	b500207459d771a0
+23798	41016	7699976530239297	CMakeFiles/RoyalCarRental.dir/src/Booking.cpp.obj	cbd57940bded625c
+121	807	7700816956021892	RoyalCarRental_autogen/mocs_compilation.cpp	b500207459d771a0
+121	807	7700816956021892	C:/Users/AL RASHIDS/Documents/RoyalCarRental/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/RoyalCarRental_autogen/mocs_compilation.cpp	b500207459d771a0
+121	807	7700816956021892	C:/Users/AL RASHIDS/Documents/RoyalCarRental/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/RoyalCarRental_autogen/timestamp	b500207459d771a0
+23792	43088	7699976530179333	CMakeFiles/RoyalCarRental.dir/src/AdminDashboard.cpp.obj	704601da3c4b1520
+23806	46122	7699976530319265	CMakeFiles/RoyalCarRental.dir/src/BookingPage.cpp.obj	bc27f2b5baa41b61
+23778	252286	7699976530039416	CMakeFiles/RoyalCarRental.dir/qcustomplot/qcustomplot.cpp.obj	9bb24dcdde11efc5
+5975	93740	7700088757676320	CMakeFiles/RoyalCarRental.dir/RoyalCarRental_autogen/mocs_compilation.cpp.obj	614cfdaed2359100
+82253	110240	7699977114794642	CMakeFiles/RoyalCarRental.dir/src/ReturnPage.cpp.obj	570de86eca6f44c8
+5987	29316	7700088757796241	CMakeFiles/RoyalCarRental.dir/src/Admin.cpp.obj	b1cc10b5032479c5
+186	281	7699975796569057	CMakeFiles/clean.additional	baedbe210acaa455
+48448	69938	7699976776740437	CMakeFiles/RoyalCarRental.dir/src/DatabaseManager.cpp.obj	e60ee17c5b707396
+103504	133020	7699977327309942	CMakeFiles/RoyalCarRental.dir/src/VehicleManagementPage.cpp.obj	761cd69e4a5a10bb
+5996	29773	7700088757876214	CMakeFiles/RoyalCarRental.dir/src/Customer.cpp.obj	4166e9383db2b257
+46122	66260	7699976753489807	CMakeFiles/RoyalCarRental.dir/src/CustomerFormPage.cpp.obj	204514d8485f9d76
+92119	103503	7699977213452484	CMakeFiles/RoyalCarRental.dir/src/Vehicle.cpp.obj	e57642ea397daaa6
+41017	48447	7699976702434533	CMakeFiles/RoyalCarRental.dir/src/Car.cpp.obj	d37563877e5fc1c1
+810	12883	7700816962913384	CMakeFiles/RoyalCarRental.dir/src/CustomerDashboard.cpp.obj	3a88694c5d861660
+12884	237438	7700817083651901	RoyalCarRental.exe	a16809e7b24aa241
+29802	50266	7700088995942608	CMakeFiles/RoyalCarRental.dir/src/main.cpp.obj	57c09af2e5006609
+59066	82252	7699976882924153	CMakeFiles/RoyalCarRental.dir/src/InvoicePage.cpp.obj	2addc60d115da90a
+70283	150595	7699976995093139	CMakeFiles/RoyalCarRental.dir/src/ReportsPage.cpp.obj	1abeea4348102752
+6025	32620	7700088758176035	CMakeFiles/RoyalCarRental.dir/src/RentalSystem.cpp.obj	1ba3f5bf843e3e59
+29320	45164	7700088991135359	CMakeFiles/RoyalCarRental.dir/src/User.cpp.obj	53bd3dc59b98c222
+2799	17158	7699786036739088	CMakeFiles/RoyalCarRental.dir/src/CarCardWidget.cpp.obj	cf9306682e1020c6
+281	334	7699975797518479	clean	577b940aee94fbd7
+32621	52225	7700089024126108	CMakeFiles/RoyalCarRental.dir/src/mainwindow.cpp.obj	48459d32361f4553
+641	1987	7700014463269520	qrc_resources.cpp	2d2d926b550a2916
+1988	36588	7700014463399241	CMakeFiles/RoyalCarRental.dir/qrc_resources.cpp.obj	c650af1e1665633e
+641	1987	7700014463269520	C:/Users/AL RASHIDS/Documents/RoyalCarRental/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/qrc_resources.cpp	2d2d926b550a2916
+316	1355	7700824931124052	RoyalCarRental_autogen/timestamp	b500207459d771a0
+316	1355	7700824931124052	RoyalCarRental_autogen/mocs_compilation.cpp	b500207459d771a0
+316	1355	7700824931124052	C:/Users/AL RASHIDS/Documents/RoyalCarRental/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/RoyalCarRental_autogen/timestamp	b500207459d771a0
+316	1355	7700824931124052	C:/Users/AL RASHIDS/Documents/RoyalCarRental/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/RoyalCarRental_autogen/mocs_compilation.cpp	b500207459d771a0
+1359	25291	7700824941548063	CMakeFiles/RoyalCarRental.dir/src/CustomerDashboard.cpp.obj	3a88694c5d861660
+25292	278107	7700825180886344	RoyalCarRental.exe	a16809e7b24aa241
+234	1061	7700837432536367	RoyalCarRental_autogen/timestamp	b500207459d771a0
+234	1061	7700837432536367	RoyalCarRental_autogen/mocs_compilation.cpp	b500207459d771a0
+234	1061	7700837432536367	C:/Users/AL RASHIDS/Documents/RoyalCarRental/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/RoyalCarRental_autogen/timestamp	b500207459d771a0
+234	1061	7700837432536367	C:/Users/AL RASHIDS/Documents/RoyalCarRental/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/RoyalCarRental_autogen/mocs_compilation.cpp	b500207459d771a0
+1064	12173	7700837440831624	CMakeFiles/RoyalCarRental.dir/src/CustomerDashboard.cpp.obj	3a88694c5d861660
+12174	271845	7700837551943915	RoyalCarRental.exe	a16809e7b24aa241
+172	899	7700840729644275	RoyalCarRental_autogen/timestamp	b500207459d771a0
+172	899	7700840729644275	RoyalCarRental_autogen/mocs_compilation.cpp	b500207459d771a0
+172	899	7700840729644275	C:/Users/AL RASHIDS/Documents/RoyalCarRental/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/RoyalCarRental_autogen/timestamp	b500207459d771a0
+172	899	7700840729644275	C:/Users/AL RASHIDS/Documents/RoyalCarRental/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/RoyalCarRental_autogen/mocs_compilation.cpp	b500207459d771a0
+902	14498	7700840736940097	CMakeFiles/RoyalCarRental.dir/src/CustomerDashboard.cpp.obj	3a88694c5d861660
+14499	249297	7700840872916071	RoyalCarRental.exe	a16809e7b24aa241
+246	1121	7700844593411292	RoyalCarRental_autogen/timestamp	b500207459d771a0
+246	1121	7700844593411292	RoyalCarRental_autogen/mocs_compilation.cpp	b500207459d771a0
+246	1121	7700844593411292	C:/Users/AL RASHIDS/Documents/RoyalCarRental/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/RoyalCarRental_autogen/timestamp	b500207459d771a0
+246	1121	7700844593411292	C:/Users/AL RASHIDS/Documents/RoyalCarRental/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/RoyalCarRental_autogen/mocs_compilation.cpp	b500207459d771a0
+125	2876	7700846490937045	RoyalCarRental_autogen/timestamp	b500207459d771a0
+125	2876	7700846490937045	RoyalCarRental_autogen/mocs_compilation.cpp	b500207459d771a0
+125	2876	7700846490937045	C:/Users/AL RASHIDS/Documents/RoyalCarRental/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/RoyalCarRental_autogen/timestamp	b500207459d771a0
+125	2876	7700846490937045	C:/Users/AL RASHIDS/Documents/RoyalCarRental/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/RoyalCarRental_autogen/mocs_compilation.cpp	b500207459d771a0
+188	3151	7700848139135279	RoyalCarRental_autogen/timestamp	b500207459d771a0
+188	3151	7700848139135279	RoyalCarRental_autogen/mocs_compilation.cpp	b500207459d771a0
+188	3151	7700848139135279	C:/Users/AL RASHIDS/Documents/RoyalCarRental/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/RoyalCarRental_autogen/timestamp	b500207459d771a0
+188	3151	7700848139135279	C:/Users/AL RASHIDS/Documents/RoyalCarRental/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/RoyalCarRental_autogen/mocs_compilation.cpp	b500207459d771a0
+3163	12200	7700848140938535	CMakeFiles/RoyalCarRental.dir/src/LoginWindow.cpp.obj	66da7998d0b16e5f
+3157	13499	7700848140878775	CMakeFiles/RoyalCarRental.dir/src/CustomerDashboard.cpp.obj	3a88694c5d861660
+3153	37798	7700848140828600	CMakeFiles/RoyalCarRental.dir/RoyalCarRental_autogen/mocs_compilation.cpp.obj	614cfdaed2359100
+37800	257412	7700848487307021	RoyalCarRental.exe	a16809e7b24aa241
+177	8491	7702063503741753	RoyalCarRental_autogen/timestamp	b500207459d771a0
+177	8491	7702063503741753	RoyalCarRental_autogen/mocs_compilation.cpp	b500207459d771a0
+177	8491	7702063503741753	C:/Users/AL RASHIDS/Documents/RoyalCarRental/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/RoyalCarRental_autogen/timestamp	b500207459d771a0
+177	8491	7702063503741753	C:/Users/AL RASHIDS/Documents/RoyalCarRental/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/RoyalCarRental_autogen/mocs_compilation.cpp	b500207459d771a0
+8528	25154	7702063508449063	CMakeFiles/RoyalCarRental.dir/src/LoginWindow.cpp.obj	66da7998d0b16e5f
+8510	26687	7702063508279153	CMakeFiles/RoyalCarRental.dir/src/CustomerDashboard.cpp.obj	3a88694c5d861660
+8495	54580	7702063508129247	CMakeFiles/RoyalCarRental.dir/RoyalCarRental_autogen/mocs_compilation.cpp.obj	614cfdaed2359100
+54581	263630	7702063968986036	RoyalCarRental.exe	a16809e7b24aa241
