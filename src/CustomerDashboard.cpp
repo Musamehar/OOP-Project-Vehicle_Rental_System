@@ -269,11 +269,11 @@ QWidget* CustomerDashboard::createFilterSection()
     carTypeLayout->setSpacing(8);
 
     this->carTypeGroup = new QButtonGroup(this);
-    QCheckBox* coupeCheck = new QCheckBox("Coupe (24)");
-    QCheckBox* hatchbackCheck = new QCheckBox("Hatchback (12)");
-    QCheckBox* sedanCheck = new QCheckBox("Sedan (16)");
-    QCheckBox* mpvCheck = new QCheckBox("MPV (28)");
-    QCheckBox* suvCheck = new QCheckBox("SUV (20)");
+    QCheckBox* coupeCheck = new QCheckBox("Coupe");
+    QCheckBox* hatchbackCheck = new QCheckBox("Hatchback");
+    QCheckBox* sedanCheck = new QCheckBox("Sedan");
+    QCheckBox* mpvCheck = new QCheckBox("MPV");
+    QCheckBox* suvCheck = new QCheckBox("SUV");
 
     QString checkboxStyle = R"(
         QCheckBox {
@@ -320,8 +320,8 @@ QWidget* CustomerDashboard::createFilterSection()
 
 
     this->capacityGroup = new QButtonGroup(this);
-    QCheckBox* twoFiveCheck = new QCheckBox("2-5 (100)");
-    QCheckBox* sixMoreCheck = new QCheckBox("6 or more (4)");
+    QCheckBox* twoFiveCheck = new QCheckBox("2-5");
+    QCheckBox* sixMoreCheck = new QCheckBox("6 or more");
     for (auto cb : {twoFiveCheck, sixMoreCheck}) {
         cb->setStyleSheet(checkboxStyle);
         // FIX: Add widget with alignment to prevent horizontal stretching.
