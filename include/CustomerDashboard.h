@@ -28,8 +28,7 @@ class CustomerDashboard : public QWidget
     Q_OBJECT
 
 public:
-    explicit CustomerDashboard(Customer* customer, QWidget* loginWindow = nullptr);
-
+    explicit CustomerDashboard(Customer* customer, QWidget* loginWindow, QWidget* parent = nullptr);
 private slots:
     void showHomePage();
     void showBookingPage();

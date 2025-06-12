@@ -28,8 +28,8 @@
 #include <QSizePolicy>
 
 // Updated constructor section - Navigation bar (remove Royal branding and move buttons to top)
-CustomerDashboard::CustomerDashboard(Customer* customer, QWidget* loginWindow)
-    : currentCustomer(customer), loginRef(loginWindow)
+CustomerDashboard::CustomerDashboard(Customer* customer, QWidget* loginWindow, QWidget* parent)
+    : QWidget(parent), currentCustomer(customer), loginRef(loginWindow)
 {
     setWindowTitle("Royal Car Rentals - Customer Dashboard");
     setMinimumSize(1200, 800);
@@ -82,6 +82,7 @@ CustomerDashboard::CustomerDashboard(Customer* customer, QWidget* loginWindow)
     // Show home page by default
     contentStack->setCurrentIndex(0);
 }
+
 QWidget* CustomerDashboard::createHomePage()
 {
     QWidget* page = new QWidget;
@@ -115,7 +116,7 @@ QWidget* CustomerDashboard::createHomePage()
 
     // Subtitle label
     QLabel* subtitle = new QLabel("Manage your fleet and rentals with ease");
-    subtitle->setStyleSheet("font-size: 18px; font-weight: 600; color: white;");
+    subtitle->setStyleSheet("font-size: 18px; font-weight: bold; color: white;");
     subtitle->setAlignment(Qt::AlignCenter);
 
     textLayout->addWidget(title);
@@ -1180,16 +1181,17 @@ void CustomerDashboard::loadCarsFromDatabase()
     // This would typically load from your database
     // For now, I'll create sample data that matches the design
     allCars = {
-        {1, "Porsche 718 Cayman S", "Coupe", "C:/Users/AL RASHIDS/Documents/RoyalCarRental/assets/carcard1.jpg", 2, "Manual", 400, 4.5, true},
-        {2, "Mini Cooper 5-DOOR", "Hatchback", "C:/Users/AL RASHIDS/Documents/RoyalCarRental/assets/carcard2.jpg", 4, "Automatic", 364, 4.2, true},
-        {3, "Toyota GR Supra", "Coupe", "C:/Users/AL RASHIDS/Documents/RoyalCarRental/assets/carcard3.jpg", 2, "Manual", 360, 4.7, true},
-        {4, "Porsche 911 Turbo", "Coupe", "C:/Users/AL RASHIDS/Documents/RoyalCarRental/assets/carcard8.jpg", 2, "Manual", 468, 4.8, true},
-        {5, "Porsche Taycan 4S", "Coupe", "C:/Users/AL RASHIDS/Documents/RoyalCarRental/assets/carcard9.jpg", 2, "Automatic", 424, 4.6, true},
-        {6, "Mini Cooper Works", "Coupe", "C:/Users/AL RASHIDS/Documents/RoyalCarRental/assets/carcard10.jpg", 4, "Automatic", 360, 4.3, true},
-        {7, "Mercedes Amg", "Coupe", "C:/Users/AL RASHIDS/Documents/RoyalCarRental/assets/carcard4.jpg", 2, "Manual", 468, 4.8, true},
-        {8, "Mercedes G-Wagon", "Coupe", "C:/Users/AL RASHIDS/Documents/RoyalCarRental/assets/carcard5.jpg", 2, "Automatic", 424, 4.6, true},
-        {9, "BMW M8", "Coupe", "C:/Users/AL RASHIDS/Documents/RoyalCarRental/assets/carcard6.jpg", 4, "Automatic", 360, 4.3, true}
-    };
+        {1, "BMW X7", "SUV", "C:/Users/AL RASHIDS/Documents/RoyalCarRental/assets/carcard1.jpg", 2, "Manual", 400, 4.5, true},
+        {2, "Porsche", "Sedan", "C:/Users/AL RASHIDS/Documents/RoyalCarRental/assets/carcard2.jpg", 4, "Automatic", 364, 4.2, true},
+        {3, "Honda NSX", "Coupe", "C:/Users/AL RASHIDS/Documents/RoyalCarRental/assets/carcard3.jpg", 2, "Manual", 360, 4.7, true},
+        {4, "BMW M4", "Sedan", "C:/Users/AL RASHIDS/Documents/RoyalCarRental/assets/carcard8.jpg", 2, "Manual", 468, 4.8, true},
+        {5, "Mercedes Amg", "Coupe", "C:/Users/AL RASHIDS/Documents/RoyalCarRental/assets/carcard9.jpg", 2, "Automatic", 424, 4.6, true},
+        {6, "Macleran", "Coupe", "C:/Users/AL RASHIDS/Documents/RoyalCarRental/assets/carcard10.jpg", 4, "Automatic", 360, 4.3, true},
+        {7, "Mercedes G-Wagon", "SUV", "C:/Users/AL RASHIDS/Documents/RoyalCarRental/assets/carcard4.jpg", 2, "Manual", 468, 4.8, true},
+        {8, "Lamborghini", "Coupe", "C:/Users/AL RASHIDS/Documents/RoyalCarRental/assets/carcard5.jpg", 2, "Automatic", 424, 4.6, true},
+        {9, "Ferrari", "Coupe", "C:/Users/AL RASHIDS/Documents/RoyalCarRental/assets/carcard6.jpg", 4, "Automatic", 360, 4.3, true}
+        };
+
 
 
     filteredCars = allCars;

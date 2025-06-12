@@ -237,7 +237,7 @@ void LoginWindow::handleLogin() {
             win->show();
         } else if (role == "customer") {
             Customer* customer = new Customer(name, dbEmail, dbPass, contact);
-            auto* win = new CustomerDashboard(customer);
+            auto* win = new CustomerDashboard(customer, this);
             win->show();
 
             win->show();
