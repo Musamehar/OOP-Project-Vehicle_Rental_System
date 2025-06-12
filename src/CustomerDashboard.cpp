@@ -27,6 +27,7 @@
 #include <QSpacerItem>
 #include <QSizePolicy>
 
+// Updated constructor section - Navigation bar (remove Royal branding and move buttons to top)
 CustomerDashboard::CustomerDashboard(Customer* customer, QWidget* loginWindow)
     : currentCustomer(customer), loginRef(loginWindow)
 {
@@ -35,15 +36,10 @@ CustomerDashboard::CustomerDashboard(Customer* customer, QWidget* loginWindow)
 
     QVBoxLayout* mainLayout = new QVBoxLayout(this);
 
-    // Header with Royal branding
-    QHBoxLayout* headerLayout = new QHBoxLayout();
-    QLabel* logoLabel = new QLabel("ROYAL");
-    logoLabel->setStyleSheet("font-size: 24px; font-weight: bold; color: #1e88e5; padding: 10px;");
-    headerLayout->addWidget(logoLabel);
-    headerLayout->addStretch();
-
-    // Navigation bar
+    // Navigation bar moved to top (removed header with Royal branding)
     QHBoxLayout* navbar = new QHBoxLayout();
+    navbar->setContentsMargins(20, 15, 20, 15);
+    navbar->setSpacing(10);
 
     QPushButton* homeBtn = new QPushButton("Home");
     QPushButton* bookingBtn = new QPushButton("Booking");
@@ -66,14 +62,14 @@ CustomerDashboard::CustomerDashboard(Customer* customer, QWidget* loginWindow)
     contentStack->addWidget(createTermsPage());      // Index 3
     contentStack->addWidget(createSettingsPage());   // Index 4
 
-    mainLayout->addLayout(headerLayout);
+    // Add navbar directly to main layout (no header)
     mainLayout->addLayout(navbar);
     mainLayout->addWidget(contentStack);
     setLayout(mainLayout);
 
     setStyleSheet("background-color: #0D0D0D; color: white;");
 
-    // Connect signals
+    // Connect signals (same as before)
     connect(homeBtn, &QPushButton::clicked, this, &CustomerDashboard::showHomePage);
     connect(bookingBtn, &QPushButton::clicked, this, &CustomerDashboard::showBookingPage);
     connect(aboutBtn, &QPushButton::clicked, this, &CustomerDashboard::showAboutPage);
@@ -226,15 +222,17 @@ QWidget* CustomerDashboard::createFilterSection()
 {
     QWidget* filterWidget = new QWidget;
     filterWidget->setStyleSheet(R"(
-        background-color: #1a232a;
-        border-top-right-radius: 24px;
-        border-bottom-right-radius: 24px;
-        border-right: 2px solid #222;
-        box-shadow: 2px 0 16px #0004;
+        QWidget {
+            background-color: #1a232a;
+            border-top-right-radius: 24px;
+            border-bottom-right-radius: 24px;
+            border-right: 2px solid #333;
+        }
     )");
+
     QVBoxLayout* layout = new QVBoxLayout(filterWidget);
     layout->setContentsMargins(24, 32, 24, 32);
-    layout->setSpacing(18);
+    layout->setSpacing(32);
 
     QLabel* filterTitle = new QLabel("🔎 Filters");
     filterTitle->setStyleSheet("font-size: 22px; font-weight: bold; color: #1e88e5; margin-bottom: 18px;");
@@ -244,18 +242,30 @@ QWidget* CustomerDashboard::createFilterSection()
     QGroupBox* carTypeGroup = new QGroupBox("Car Type");
     carTypeGroup->setStyleSheet(R"(
         QGroupBox {
-            background: #232e3b;
-            border-radius: 14px;
-            margin-top: 12px;
+            background-color: #232e3b;
+            border: 2px solid #404040;
+            border-radius: 16px;
+            margin-top: 18px;
+            padding-top: 12px;
+            font-weight: bold;
+            color: #fff;
         }
         QGroupBox::title {
             color: #1e88e5;
             font-weight: bold;
             font-size: 16px;
+            subcontrol-origin: margin;
+            subcontrol-position: top left;
+            padding: 0 8px;
             margin-left: 8px;
+            background-color: #232e3b;
         }
     )");
+
     QVBoxLayout* carTypeLayout = new QVBoxLayout(carTypeGroup);
+    // FIX: Restore some horizontal margin for better framing now that widgets won't stretch.
+    carTypeLayout->setContentsMargins(15, 20, 15, 20);
+    carTypeLayout->setSpacing(8);
 
     this->carTypeGroup = new QButtonGroup(this);
     QCheckBox* coupeCheck = new QCheckBox("Coupe (24)");
@@ -264,59 +274,61 @@ QWidget* CustomerDashboard::createFilterSection()
     QCheckBox* mpvCheck = new QCheckBox("MPV (28)");
     QCheckBox* suvCheck = new QCheckBox("SUV (20)");
 
+    QString checkboxStyle = R"(
+        QCheckBox {
+            color: #ffffff;
+            font-size: 15px;
+            padding: 8px 12px;
+            spacing: 6px;
+        }
+        QCheckBox::indicator {
+            width: 20px;
+            height: 20px;
+            border-radius: 4px;
+        }
+        QCheckBox::indicator:unchecked {
+            background-color: #181f26;
+            border: 2px solid #1e88e5;
+        }
+        QCheckBox::indicator:checked {
+            background-color: #1e88e5;
+            border: 2px solid #1e88e5;
+            image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAiIGhlaWdodD0iOCIgdmlld0JveD0iMCAwIDEwIDgiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxwYXRoIGQ9Ik04LjUgMUwzLjUgNkwxLjUgNCIgc3Ryb2tlPSJ3aGl0ZSIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm9ybmQiLz4KPC9zdmc+);
+        }
+        QCheckBox::indicator:checked:hover {
+            background-color: #1565c0;
+        }
+        QCheckBox:hover {
+            color: #1e88e5;
+        }
+    )";
+
     for (auto cb : {coupeCheck, hatchbackCheck, sedanCheck, mpvCheck, suvCheck}) {
-        cb->setStyleSheet(R"(
-            QCheckBox {
-                color: #fff;
-                font-size: 15px;
-                padding: 6px 0;
-            }
-            QCheckBox::indicator {
-                width: 20px; height: 20px;
-            }
-            QCheckBox::indicator:unchecked {
-                background: #232e3b;
-                border: 2px solid #1e88e5;
-                border-radius: 4px;
-            }
-            QCheckBox::indicator:checked {
-                background: #1e88e5;
-                border: 2px solid #1e88e5;
-                border-radius: 4px;
-            }
-        )");
-        carTypeLayout->addWidget(cb);
+        cb->setStyleSheet(checkboxStyle);
+        // FIX: Add widget with alignment to prevent horizontal stretching.
+        carTypeLayout->addWidget(cb, 0, Qt::AlignLeft);
     }
 
     // Capacity Filter
     QGroupBox* capacityGroup = new QGroupBox("Capacity");
     capacityGroup->setStyleSheet(carTypeGroup->styleSheet());
     QVBoxLayout* capacityLayout = new QVBoxLayout(capacityGroup);
+    // Apply same layout fixes to the capacity group for consistency.
+    capacityLayout->setContentsMargins(15, 20, 15, 20);
+    capacityLayout->setSpacing(8);
+
 
     this->capacityGroup = new QButtonGroup(this);
     QCheckBox* twoFiveCheck = new QCheckBox("2-5 (100)");
     QCheckBox* sixMoreCheck = new QCheckBox("6 or more (4)");
     for (auto cb : {twoFiveCheck, sixMoreCheck}) {
-        cb->setStyleSheet(coupeCheck->styleSheet());
-        capacityLayout->addWidget(cb);
-    }
-
-    // Customer Recommendation Filter
-    QGroupBox* recommendationGroup = new QGroupBox("Customer Recommendation");
-    recommendationGroup->setStyleSheet(carTypeGroup->styleSheet());
-    QVBoxLayout* recommendationLayout = new QVBoxLayout(recommendationGroup);
-
-    this->recommendationGroup = new QButtonGroup(this);
-    QCheckBox* seventyUpCheck = new QCheckBox("70% & up (72)");
-    QCheckBox* fortyUpCheck = new QCheckBox("40% & up (28)");
-    for (auto cb : {seventyUpCheck, fortyUpCheck}) {
-        cb->setStyleSheet(coupeCheck->styleSheet());
-        recommendationLayout->addWidget(cb);
+        cb->setStyleSheet(checkboxStyle);
+        // FIX: Add widget with alignment to prevent horizontal stretching.
+        capacityLayout->addWidget(cb, 0, Qt::AlignLeft);
     }
 
     layout->addWidget(carTypeGroup);
     layout->addWidget(capacityGroup);
-    layout->addWidget(recommendationGroup);
     layout->addStretch();
 
     // Connect filter signals
@@ -413,7 +425,7 @@ QWidget* CustomerDashboard::createSearchSection()
     searchLayout->addLayout(pickupTimeLayout);
     searchLayout->addLayout(dropoffTimeLayout);
 
-    QPushButton* searchBtn = new QPushButton("🔍 Search ");
+    QPushButton* searchBtn = new QPushButton("🔍Search");
     searchBtn->setFixedHeight(44);
     searchBtn->setStyleSheet(R"(
         QPushButton {
@@ -438,13 +450,15 @@ QWidget* CustomerDashboard::createSearchSection()
 QWidget* CustomerDashboard::createCarCard(const CarData& car)
 {
     QWidget* card = new QWidget;
-    card->setFixedSize(370, 430);
+    // FIX: Reduced the fixed size of the card for a more compact look
+    card->setFixedSize(365, 350);
 
     QVBoxLayout* layout = new QVBoxLayout(card);
     layout->setAlignment(Qt::AlignCenter);
     layout->setContentsMargins(12, 12, 12, 12);
-    layout->setSpacing(10);
+    layout->setSpacing(8);
 
+    // Car image
     QLabel* imageLabel = new QLabel;
     imageLabel->setFixedSize(340, 180);
     imageLabel->setAlignment(Qt::AlignCenter);
@@ -463,6 +477,9 @@ QWidget* CustomerDashboard::createCarCard(const CarData& car)
     }
     layout->addWidget(imageLabel);
 
+    layout->addSpacing(12);
+
+    // Name and rating row
     QHBoxLayout* nameRow = new QHBoxLayout;
     QLabel* nameLabel = new QLabel(car.name);
     nameLabel->setStyleSheet("font-size: 19px; font-weight: bold; color: #fff;");
@@ -477,25 +494,10 @@ QWidget* CustomerDashboard::createCarCard(const CarData& car)
     nameRow->addWidget(badge);
     layout->addLayout(nameRow);
 
-    QHBoxLayout* detailsRow = new QHBoxLayout;
-    QLabel* typeIcon = new QLabel("🚗");
-    typeIcon->setStyleSheet("font-size: 16px;");
-    QLabel* typeLabel = new QLabel(car.type);
-    typeLabel->setStyleSheet("color: #bbb; font-size: 14px;");
-    QLabel* capIcon = new QLabel("👥");
-    capIcon->setStyleSheet("font-size: 16px;");
-    QLabel* capLabel = new QLabel(QString("%1 seats").arg(car.capacity));
-    capLabel->setStyleSheet("color: #bbb; font-size: 14px;");
-    detailsRow->addWidget(typeIcon);
-    detailsRow->addWidget(typeLabel);
-    detailsRow->addSpacing(16);
-    detailsRow->addWidget(capIcon);
-    detailsRow->addWidget(capLabel);
-    detailsRow->addStretch();
-    layout->addLayout(detailsRow);
+    // FIX: Reduced extra spacing to decrease vertical size
+    layout->addSpacing(10);
 
-    layout->addSpacing(8);
-
+    // Bottom section with rent button and price
     QHBoxLayout* bottomLayout = new QHBoxLayout;
     QPushButton* rentBtn = new QPushButton("Rent Now");
     rentBtn->setFixedWidth(130);
@@ -513,9 +515,11 @@ QWidget* CustomerDashboard::createCarCard(const CarData& car)
             background-color: #388e3c;
         }
     )");
+
     QLabel* priceLabel = new QLabel(QString("$%1/day").arg(car.pricePerDay, 0, 'f', 0));
     priceLabel->setAlignment(Qt::AlignCenter);
     priceLabel->setStyleSheet("font-size: 20px; color: #1e88e5; font-weight: bold; margin-left: 14px;");
+
     bottomLayout->addWidget(rentBtn);
     bottomLayout->addSpacing(18);
     bottomLayout->addWidget(priceLabel);
@@ -527,6 +531,7 @@ QWidget* CustomerDashboard::createCarCard(const CarData& car)
         showRentDialog(car);
     });
 
+    // Card styling
     card->setStyleSheet(R"(
         QWidget {
             background-color: #232e3b;
@@ -534,7 +539,7 @@ QWidget* CustomerDashboard::createCarCard(const CarData& car)
             border: 2px solid #232e3b;
             border-radius: 18px;
             box-shadow: 0 4px 28px #0004;
-            padding: 16px;
+            padding: 12px; /* FIX: Reduced padding */
             margin: 12px;
             transition: border 0.2s;
         }
